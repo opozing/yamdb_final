@@ -92,19 +92,16 @@ class UsersViewSet(viewsets.ViewSetMixin,
         if request.method == 'GET':
             me = request.user
             serializer = self.get_serializer(me)
-            return Response(
-                data=serializer.data,
-                status=status.HTTP_200_OK,
-                content_type='application/json',
-            )
+
         if request.method == 'PATCH':
             me = request.user
             serializer = self.get_serializer(
                 me, data=request.data, partial=True)
             serializer.is_valid(raise_exception=True)
             self.perform_update(serializer)
-            return Response(
-                data=serializer.data,
-                status=status.HTTP_200_OK,
-                content_type='application/json',
-            )
+
+        return Response(
+            data=serializer.data,
+            status=status.HTTP_200_OK,
+            content_type='application/json',
+        )
