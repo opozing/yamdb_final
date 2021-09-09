@@ -16,7 +16,7 @@ class YamdbUserManager(BaseUserManager):
 
     def create_superuser(self, username=None, password=None, email=None):
         user_obj = self.create_user(
-            username=str(uuid1()),
+            username=username,
             email=email,
             password=password,
             is_staff=True,
