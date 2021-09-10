@@ -106,3 +106,5 @@ class UsersViewSet(viewsets.ViewSetMixin,
                 status=status.HTTP_200_OK,
                 content_type='application/json',
             )
+        else:
+            return None
