@@ -23,3 +23,5 @@ docker-compose exec web python manage.py collectstatic --no-input
 
 ### Авторы
 Сергей
+
+![example workflow](https://github.com/opozing/yamdb_final/actions/workflows/yamdb_workflow.yaml/badge.svg)
