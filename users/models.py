@@ -1,4 +1,4 @@
-from uuid import uuid1
+# from uuid import uuid1
 
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.contrib.auth.tokens import default_token_generator
