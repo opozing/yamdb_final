@@ -100,8 +100,9 @@ class UsersViewSet(viewsets.ViewSetMixin,
             serializer.is_valid(raise_exception=True)
             self.perform_update(serializer)
 
-        return Response(
-            data=serializer.data,
-            status=status.HTTP_200_OK,
-            content_type='application/json',
-        )
+        if request.method == 'GET' or 'PATCH':
+            return Response(
+                data=serializer.data,
+                status=status.HTTP_200_OK,
+                content_type='application/json',
+            )
