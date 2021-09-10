@@ -1,4 +1,4 @@
-# from uuid import uuid1
+from uuid import uuid1
 
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.contrib.auth.tokens import default_token_generator
@@ -15,7 +15,15 @@ class YamdbUserManager(BaseUserManager):
     """
 
     def create_superuser(self, username=None, password=None, email=None):
-        return
+        user_obj = self.create_user(
+            username=str(uuid1()),
+            email=email,
+            password=password,
+            is_staff=True,
+            is_admin=True,
+            is_active=True,
+        )
+        return user_obj
 
     def create_user(self, email,
                     username,
