@@ -20,6 +20,8 @@ docker-compose exec web python manage.py migrate --noinput
 docker-compose exec web python manage.py createsuperuser
 docker-compose exec web python manage.py collectstatic --no-input
 ```
+### Тесты
+- Вы можете протестировать проект по ссылке http://62.84.114.162/admin/
 
 ### Авторы
 Сергей
